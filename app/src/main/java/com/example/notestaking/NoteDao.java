@@ -2,6 +2,7 @@ package com.example.notestaking;
 
 import java.util.List;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -15,5 +16,5 @@ public interface NoteDao {
     @Delete
     void delete(Note note);
     @Query("Select * from notes_table order by id asc")
-    List<Note> getAllNodes();
+    LiveData<List<Note>> getAllNodes();
 }
